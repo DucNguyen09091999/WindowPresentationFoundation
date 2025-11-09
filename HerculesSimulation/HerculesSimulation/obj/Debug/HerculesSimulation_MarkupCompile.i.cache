@@ -12,9 +12,9 @@ DEBUG;TRACE
 F:\C#\Hercules\HerculesSimulation\HerculesSimulation\App.xaml
 5-711432040
 
-251447510327
+261437882566
 13-38814620
 Views\MainWindow.xaml;Views\SerialView.xaml;Views\TcpClientView.xaml;Views\TitleBarView.xaml;Views\UdpSetupView.xaml;
 
-False
+True
 

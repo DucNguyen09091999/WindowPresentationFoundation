@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "F:\\C#\\Hercules\\HerculesSimulation\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|F:\\C#\\Hercules\\HerculesSimulation\\herculessimulation\\viewmodels\\tcpclientviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|solutionrelative:herculessimulation\\viewmodels\\tcpclientviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|F:\\C#\\Hercules\\HerculesSimulation\\herculessimulation\\services\\pingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|solutionrelative:herculessimulation\\services\\pingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|F:\\C#\\Hercules\\HerculesSimulation\\herculessimulation\\services\\ipingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|solutionrelative:herculessimulation\\services\\ipingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|f:\\c#\\hercules\\herculessimulation\\herculessimulation\\services\\tcpclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|solutionrelative:herculessimulation\\services\\tcpclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|f:\\c#\\hercules\\herculessimulation\\herculessimulation\\viewmodels\\tcpclientviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|solutionrelative:herculessimulation\\viewmodels\\tcpclientviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|F:\\C#\\Hercules\\HerculesSimulation\\herculessimulation\\services\\itcpclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|solutionrelative:herculessimulation\\services\\itcpclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|f:\\c#\\hercules\\herculessimulation\\herculessimulation\\services\\connectionresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|solutionrelative:herculessimulation\\services\\connectionresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|F:\\C#\\Hercules\\HerculesSimulation\\herculessimulation\\cores\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,16 +35,8 @@
       "RelativeMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|solutionrelative:herculessimulation\\models\\logentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|f:\\c#\\hercules\\herculessimulation\\herculessimulation\\services\\itcpclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|solutionrelative:herculessimulation\\services\\itcpclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|F:\\C#\\Hercules\\HerculesSimulation\\herculessimulation\\views\\tcpclientview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|solutionrelative:herculessimulation\\views\\tcpclientview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|F:\\C#\\Hercules\\HerculesSimulation\\herculessimulation\\services\\pingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|solutionrelative:herculessimulation\\services\\pingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|F:\\C#\\Hercules\\HerculesSimulation\\herculessimulation\\viewmodels\\titlebarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -53,10 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|F:\\C#\\Hercules\\HerculesSimulation\\herculessimulation\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|solutionrelative:herculessimulation\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|F:\\C#\\Hercules\\HerculesSimulation\\herculessimulation\\services\\ipingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|solutionrelative:herculessimulation\\services\\ipingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|F:\\C#\\Hercules\\HerculesSimulation\\herculessimulation\\cores\\viewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -113,44 +117,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PingService.cs",
-              "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\Services\\PingService.cs",
-              "RelativeDocumentMoniker": "HerculesSimulation\\Services\\PingService.cs",
-              "ToolTip": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\Services\\PingService.cs",
-              "RelativeToolTip": "HerculesSimulation\\Services\\PingService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T09:07:20.22Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "MainViewModel.cs",
-              "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\ViewModels\\MainViewModel.cs",
-              "RelativeDocumentMoniker": "HerculesSimulation\\ViewModels\\MainViewModel.cs",
-              "ToolTip": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\ViewModels\\MainViewModel.cs",
-              "RelativeToolTip": "HerculesSimulation\\ViewModels\\MainViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-08T07:21:25.891Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "PcNetworkSettingsViewModel.cs",
-              "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\ViewModels\\PcNetworkSettingsViewModel.cs",
-              "RelativeDocumentMoniker": "HerculesSimulation\\ViewModels\\PcNetworkSettingsViewModel.cs",
-              "ToolTip": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\ViewModels\\PcNetworkSettingsViewModel.cs",
-              "RelativeToolTip": "HerculesSimulation\\ViewModels\\PcNetworkSettingsViewModel.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAYwCIAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T07:55:18.195Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "SerialViewModel.cs",
               "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\ViewModels\\SerialViewModel.cs",
               "RelativeDocumentMoniker": "HerculesSimulation\\ViewModels\\SerialViewModel.cs",
@@ -162,7 +129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "TabControlViewModel.cs",
               "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\ViewModels\\TabControlViewModel.cs",
               "RelativeDocumentMoniker": "HerculesSimulation\\ViewModels\\TabControlViewModel.cs",
@@ -174,38 +141,37 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "RelayCommand.cs",
               "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\Cores\\RelayCommand.cs",
               "RelativeDocumentMoniker": "HerculesSimulation\\Cores\\RelayCommand.cs",
               "ToolTip": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\Cores\\RelayCommand.cs",
               "RelativeToolTip": "HerculesSimulation\\Cores\\RelayCommand.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAvwCQAAAAIAAAA",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAACQAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-08T07:32:25.05Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "TcpClientView.xaml",
               "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\Views\\TcpClientView.xaml",
               "RelativeDocumentMoniker": "HerculesSimulation\\Views\\TcpClientView.xaml",
               "ToolTip": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\Views\\TcpClientView.xaml",
               "RelativeToolTip": "HerculesSimulation\\Views\\TcpClientView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-08T09:46:25.159Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T09:46:25.159Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "TcpClientService.cs",
               "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\Services\\TcpClientService.cs",
               "RelativeDocumentMoniker": "HerculesSimulation\\Services\\TcpClientService.cs",
               "ToolTip": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\Services\\TcpClientService.cs",
               "RelativeToolTip": "HerculesSimulation\\Services\\TcpClientService.cs",
-              "ViewState": "AQIAAF8AAAAAAAAAAAAlwHYAAAAkAAAA",
+              "ViewState": "AQIAACsAAAAAAAAAAAAAAEgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-09T09:38:02.074Z",
               "EditorCaption": ""
@@ -218,39 +184,90 @@
               "RelativeDocumentMoniker": "HerculesSimulation\\Services\\ITcpClientService.cs",
               "ToolTip": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\Services\\ITcpClientService.cs",
               "RelativeToolTip": "HerculesSimulation\\Services\\ITcpClientService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBQAAAAfAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBEAAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-09T09:37:23Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 2,
               "Title": "IPingService.cs",
               "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\Services\\IPingService.cs",
               "RelativeDocumentMoniker": "HerculesSimulation\\Services\\IPingService.cs",
               "ToolTip": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\Services\\IPingService.cs",
               "RelativeToolTip": "HerculesSimulation\\Services\\IPingService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAsAAAAuAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAwAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T09:06:39.387Z"
+              "WhenOpened": "2025-11-09T09:06:39.387Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "TcpClientViewModel.cs",
               "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\ViewModels\\TcpClientViewModel.cs",
               "RelativeDocumentMoniker": "HerculesSimulation\\ViewModels\\TcpClientViewModel.cs",
               "ToolTip": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\ViewModels\\TcpClientViewModel.cs",
               "RelativeToolTip": "HerculesSimulation\\ViewModels\\TcpClientViewModel.cs",
-              "ViewState": "AQIAANYAAAAAAAAAAAAhwO4AAAAAAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAB8AAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-08T09:47:06.291Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PingService.cs",
+              "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\Services\\PingService.cs",
+              "RelativeDocumentMoniker": "HerculesSimulation\\Services\\PingService.cs",
+              "ToolTip": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\Services\\PingService.cs",
+              "RelativeToolTip": "HerculesSimulation\\Services\\PingService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T09:07:20.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 14,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\ViewModels\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "HerculesSimulation\\ViewModels\\MainViewModel.cs",
+              "ToolTip": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\ViewModels\\MainViewModel.cs",
+              "RelativeToolTip": "HerculesSimulation\\ViewModels\\MainViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T07:21:25.891Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ConnectionResult.cs",
+              "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\Services\\ConnectionResult.cs",
+              "RelativeDocumentMoniker": "HerculesSimulation\\Services\\ConnectionResult.cs",
+              "ToolTip": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\Services\\ConnectionResult.cs",
+              "RelativeToolTip": "HerculesSimulation\\Services\\ConnectionResult.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T10:11:21.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PcNetworkSettingsViewModel.cs",
+              "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\ViewModels\\PcNetworkSettingsViewModel.cs",
+              "RelativeDocumentMoniker": "HerculesSimulation\\ViewModels\\PcNetworkSettingsViewModel.cs",
+              "ToolTip": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\ViewModels\\PcNetworkSettingsViewModel.cs",
+              "RelativeToolTip": "HerculesSimulation\\ViewModels\\PcNetworkSettingsViewModel.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAAYwCIAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T07:55:18.195Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "ViewModelBase.cs",
               "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\Cores\\ViewModelBase.cs",
               "RelativeDocumentMoniker": "HerculesSimulation\\Cores\\ViewModelBase.cs",
@@ -262,7 +279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "LogEntry.cs",
               "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\Models\\LogEntry.cs",
               "RelativeDocumentMoniker": "HerculesSimulation\\Models\\LogEntry.cs",
@@ -275,7 +292,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "UdpSetupViewModel.cs",
               "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\ViewModels\\UdpSetupViewModel.cs",
               "RelativeDocumentMoniker": "HerculesSimulation\\ViewModels\\UdpSetupViewModel.cs",
@@ -287,7 +304,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "TitleBarViewModel.cs",
               "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\ViewModels\\TitleBarViewModel.cs",
               "RelativeDocumentMoniker": "HerculesSimulation\\ViewModels\\TitleBarViewModel.cs",
@@ -299,7 +316,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "FrameworkTemplate.cs",
               "DocumentMoniker": "C:\\Users\\nguye\\AppData\\Local\\Temp\\.vsdbgsrc\\573b2880de378bcf441369c3a2498b47757341930a70040b33011a78e0c10adf\\FrameworkTemplate.cs",
               "ToolTip": "C:\\Users\\nguye\\AppData\\Local\\Temp\\.vsdbgsrc\\573b2880de378bcf441369c3a2498b47757341930a70040b33011a78e0c10adf\\FrameworkTemplate.cs",
@@ -309,7 +326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\App.xaml.cs",
               "RelativeDocumentMoniker": "HerculesSimulation\\App.xaml.cs",
@@ -321,19 +338,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "App.xaml",
               "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\App.xaml",
               "RelativeDocumentMoniker": "HerculesSimulation\\App.xaml",
               "ToolTip": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\App.xaml",
               "RelativeToolTip": "HerculesSimulation\\App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-08T08:02:42.418Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-08T08:02:42.418Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "UdpSetupView.xaml",
               "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\Views\\UdpSetupView.xaml",
               "RelativeDocumentMoniker": "HerculesSimulation\\Views\\UdpSetupView.xaml",
@@ -344,7 +360,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\Views\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "HerculesSimulation\\Views\\MainWindow.xaml.cs",
@@ -356,7 +372,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "SerialView.xaml",
               "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\Views\\SerialView.xaml",
               "RelativeDocumentMoniker": "HerculesSimulation\\Views\\SerialView.xaml",
@@ -367,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\Views\\MainWindow.xaml",
               "RelativeDocumentMoniker": "HerculesSimulation\\Views\\MainWindow.xaml",
@@ -378,7 +394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "TabViewModel.cs",
               "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\ViewModels\\TabViewModel.cs",
               "RelativeDocumentMoniker": "HerculesSimulation\\ViewModels\\TabViewModel.cs",
@@ -390,7 +406,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "App.config",
               "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\App.config",
               "RelativeDocumentMoniker": "HerculesSimulation\\App.config",
@@ -402,7 +418,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "TitleBarView.xaml",
               "DocumentMoniker": "F:\\C#\\Hercules\\HerculesSimulation\\HerculesSimulation\\Views\\TitleBarView.xaml",
               "RelativeDocumentMoniker": "HerculesSimulation\\Views\\TitleBarView.xaml",

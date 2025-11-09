@@ -132,60 +132,85 @@ namespace HerculesSimulation.ViewModels
 
         private async void ExecuteConnect(object obj)
         {
-            // Logic 1: Neu dang ket noi, ngat ket noi
+            // Logic 1: Nếu đang kết nối -> Ngắt kết nối (Giữ nguyên)
             if (_isConnected)
             {
                 _tcpClientService.Disconnect();
-                // ham OnConnectionClosed se tu dong duoc goi va xu ly phan con lai
+                return; // Hàm OnConnectionClosed sẽ xử lý phần còn lại
             }
-            // Logic 2: neu chua ket noi, thu ket noi
-            else
+
+            // Logic 2: Thử kết nối
+            LogEntries.Add(new LogEntry($"Connecting to {ModuleIp}:{Port} ...", LogEntry.ColorStatus));
+
+            // Vô hiệu hóa nút
+            _isPinging = true;
+            ((RelayCommand)ConnectCommand).RaiseCanExecuteChanged();
+            ((RelayCommand)PingCommand).RaiseCanExecuteChanged();
+
+            ConnectionResult result = ConnectionResult.UnknownError;
+
+            try
             {
-                LogEntries.Add(new LogEntry($"Connecting to {ModuleIp}:{Port} ...", LogEntry.ColorStatus));
-
-                // vo hieu hoa nut connect va nut ping trong khi cho
-                _isPinging = true; // dung chung mot co ping de khoa tam
-                ((RelayCommand)ConnectCommand).RaiseCanExecuteChanged();
-                ((RelayCommand)PingCommand).RaiseCanExecuteChanged();
-
-                bool success = false;
-                try
+                if (!int.TryParse(Port, out int portNumber))
                 {
-                    if (!int.TryParse(Port, out int portNumber))
-                    {
-                        LogEntries.Add(new LogEntry("Invalid Port number.", LogEntry.ColorError));
-                    }
-                    else
-                    {
-                        success = await _tcpClientService.ConnectAsync(ModuleIp, portNumber);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    LogEntries.Add(new LogEntry($"Connection error: {ex.Message}", LogEntry.ColorError));
-                }
-
-                // xu ly ket qua
-                if (success)
-                {
-                    _isConnected = true;
-                    ConnectButtonText = "Disconnect";
-                    LogEntries.Add(new LogEntry($"Connected to {ModuleIp}:{Port}", LogEntry.ColorStatus));
+                    LogEntries.Add(new LogEntry("Invalid Port number.", LogEntry.ColorError));
                 }
                 else
                 {
+                    // GỌI SERVICE ĐÃ CẬP NHẬT
+                    result = await _tcpClientService.ConnectAsync(ModuleIp, portNumber);
+                }
+            }
+            catch (Exception ex)
+            {
+                LogEntries.Add(new LogEntry($"Connection error: {ex.Message}", LogEntry.ColorError));
+                result = ConnectionResult.UnknownError;
+            }
+
+            // XỬ LÝ KẾT QUẢ TỪ SERVICE
+            switch (result)
+            {
+                case ConnectionResult.Success:
+                    _isConnected = true;
+                    ConnectButtonText = "Disconnect";
+                    LogEntries.Add(new LogEntry($"Connected to {ModuleIp}:{Port}", LogEntry.ColorStatus));
+                    break;
+
+                // 1. ĐÂY LÀ YÊU CẦU CỦA BẠN:
+                // (Server chưa bật HOẶC Port đang bận/bị chặn)
+                case ConnectionResult.ConnectionRefused:
                     _isConnected = false;
                     ConnectButtonText = "Connect";
-                    LogEntries.Add(new LogEntry("Connection failed.", LogEntry.ColorError));
-                }
+                    LogEntries.Add(new LogEntry("Error: Connection Refused", LogEntry.ColorError));
+                    LogEntries.Add(new LogEntry("Root cause: Server is down, wrong port id, blocked by firmware)", LogEntry.ColorError));
+                    break;
 
-                // kich hoat lai cac nut
-                _isPinging = false;
-                ((RelayCommand)ConnectCommand).RaiseCanExecuteChanged();
-                ((RelayCommand)PingCommand).RaiseCanExecuteChanged();
-                ((RelayCommand)Send1Command).RaiseCanExecuteChanged();
+                case ConnectionResult.HostNotFound:
+                    _isConnected = false;
+                    ConnectButtonText = "Connect";
+                    LogEntries.Add(new LogEntry("Error: Host Not Found", LogEntry.ColorError));
+                    break;
+
+                case ConnectionResult.NetworkUnreachable:
+                    _isConnected = false;
+                    ConnectButtonText = "Connect";
+                    LogEntries.Add(new LogEntry("Error: Network Unreachable", LogEntry.ColorError));
+                    break;
+
+                default: // UnknownError hoặc Timeout
+                    _isConnected = false;
+                    ConnectButtonText = "Connect";
+                    LogEntries.Add(new LogEntry("Error: Unknown Error / Timeout", LogEntry.ColorError));
+                    break;
             }
+
+            // Kích hoạt lại các nút
+            _isPinging = false;
+            ((RelayCommand)ConnectCommand).RaiseCanExecuteChanged();
+            ((RelayCommand)PingCommand).RaiseCanExecuteChanged();
+            ((RelayCommand)Send1Command).RaiseCanExecuteChanged();
         }
+
         private bool CanExecuteConnect(object obj)
         {
             return !string.IsNullOrEmpty(ModuleIp) &&
@@ -196,17 +221,26 @@ namespace HerculesSimulation.ViewModels
         // === cac ham xu ly su kien tu services ===
 
         //Duoc goi khi service mat ket noi (do server dong hoac loi)
-        private void OnConnectionClosed()
+        private void OnConnectionClosed(bool wasIntentional)
         {
             _isConnected = false;
 
-            // Cap nhat UI (phai dung Dispatcher vi dang o thread khac)
             App.Current.Dispatcher.Invoke(() =>
             {
                 ConnectButtonText = "Connect";
-                LogEntries.Add(new LogEntry("Connection closed.", LogEntry.ColorError));
 
-                // Bao cho cac nut cap nhat lai trang thai
+                if (wasIntentional)
+                {
+            
+                    LogEntries.Add(new LogEntry("Connection closed.", LogEntry.ColorStatus));
+                }
+                else
+                {
+                    // Server sập, mất mạng, v.v...
+                    LogEntries.Add(new LogEntry("LỖI: Máy chủ đã ngắt kết nối! (Server dropped connection)", LogEntry.ColorError));
+                }
+
+                // Báo cho các nút cập nhật lại trạng thái
                 ((RelayCommand)ConnectCommand).RaiseCanExecuteChanged();
                 ((RelayCommand)PingCommand).RaiseCanExecuteChanged();
                 ((RelayCommand)Send1Command).RaiseCanExecuteChanged();

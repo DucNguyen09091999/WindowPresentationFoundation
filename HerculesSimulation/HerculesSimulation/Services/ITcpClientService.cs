@@ -15,10 +15,11 @@ namespace HerculesSimulation.Services
         event Action<byte[]> DataReceived;
 
         // Sự kiện khi mất kết nối (do server đóng hoặc lỗi)
-        event Action ConnectionClosed;
+        // 'bool' sẽ là 'true' nếu là chủ động, 'false' nếu là bị sập
+        event Action<bool> ConnectionClosed;
 
         // Hàm kết nối
-        Task<bool> ConnectAsync(string ipAddress, int port);
+        Task<ConnectionResult> ConnectAsync(string ipAddress, int port);
 
         // Hàm ngắt kết nối
         void Disconnect();

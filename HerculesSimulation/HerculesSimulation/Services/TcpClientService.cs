@@ -13,36 +13,62 @@ namespace HerculesSimulation.Services
         private TcpClient _tcpClient;
         private NetworkStream _stream;
         private CancellationTokenSource _cancellationTokenSource;
-
+        private bool _isIntentionalDisconnect = false;
+        private bool _isCleaningUp = false;
         public bool IsConnected => _tcpClient?.Connected ?? false;
 
         public event Action<byte[]> DataReceived;
-        public event Action ConnectionClosed;
-
+        public event Action<bool> ConnectionClosed;
         // Hàm kết nối
-        public async Task<bool> ConnectAsync(string ipAddress, int port)
+        public async Task<ConnectionResult> ConnectAsync(string ipAddress, int port)
         {
-            if (IsConnected) return true;
-
+            if (IsConnected) return ConnectionResult.Success;
+            _isCleaningUp = false;
+            _isIntentionalDisconnect = false;
             try
             {
                 _tcpClient = new TcpClient();
-                // Dùng ConnectAsync để không làm đơ UI
                 await _tcpClient.ConnectAsync(ipAddress, port);
                 _stream = _tcpClient.GetStream();
 
-                // Tạo một token để có thể hủy tác vụ "lắng nghe"
                 _cancellationTokenSource = new CancellationTokenSource();
-                // Bắt đầu một Task chạy nền để lắng nghe dữ liệu
                 Task.Run(() => ListenForData(_cancellationTokenSource.Token));
 
-                return true;
+                return ConnectionResult.Success; // Kết nối thành công
+            }
+            // PHẦN LOGIC BẮT LỖI QUAN TRỌNG
+            catch (SocketException ex)
+            {
+                Cleanup();
+                // Phân tích mã lỗi socket
+                switch (ex.SocketErrorCode)
+                {
+                    // Lỗi: Máy chủ có đó, nhưng port không nghe
+                    // (Server chưa bật, Port bị firewall chặn, Port đang bận)
+                    case SocketError.ConnectionRefused:
+                        return ConnectionResult.ConnectionRefused;
+
+                    // Lỗi: Không tìm thấy IP hoặc tên DNS
+                    case SocketError.HostNotFound:
+                        return ConnectionResult.HostNotFound;
+
+                    // Lỗi: Không có đường mạng (ví dụ: rút dây LAN)
+                    case SocketError.NetworkUnreachable:
+                        return ConnectionResult.NetworkUnreachable;
+
+                    // Lỗi: Hết thời gian chờ
+                    case SocketError.TimedOut:
+                        return ConnectionResult.Timeout;
+
+                    default:
+                        return ConnectionResult.UnknownError;
+                }
             }
             catch (Exception)
             {
-                // Nếu lỗi, dọn dẹp và trả về false
+                // Lỗi chung (ví dụ: IP sai định dạng)
                 Cleanup();
-                return false;
+                return ConnectionResult.UnknownError;
             }
         }
 
@@ -50,6 +76,9 @@ namespace HerculesSimulation.Services
         public void Disconnect()
         {
             if (!IsConnected) return;
+
+            // ĐÁNH DẤU LÀ "CHỦ ĐỘNG"
+            _isIntentionalDisconnect = true;
             Cleanup();
         }
 
@@ -81,30 +110,26 @@ namespace HerculesSimulation.Services
                 while (IsConnected && !token.IsCancellationRequested)
                 {
                     int bytesRead = await _stream.ReadAsync(buffer, 0, buffer.Length, token);
+
+                    // KHI SERVER SẬP (hoặc đóng kết nối)
+                    // ReadAsync sẽ trả về 0
                     if (bytesRead == 0)
                     {
-                        // Server đã đóng kết nối
-                        break;
+                        break; // Thoát vòng lặp
                     }
-
-                    var receivedData = new byte[bytesRead];
-                    Array.Copy(buffer, 0, receivedData, 0, bytesRead);
-
-                    // Phát sự kiện "DataReceived"
-                    DataReceived?.Invoke(receivedData);
+                    // ... (phần DataReceived?.Invoke...)
                 }
             }
-            catch (OperationCanceledException)
-            {
-                // Người dùng nhấn Disconnect, đây là hành vi mong muốn
-            }
+            catch (OperationCanceledException) { /* Bỏ qua, đây là Disconnect chủ động */ }
             catch (Exception)
             {
-                // Lỗi thực sự (ví dụ: rút dây mạng)
+                // Bất kỳ lỗi nào khác (rút dây mạng, server crash)
+                // cũng sẽ thoát vòng lặp.
             }
             finally
             {
-                // Dù lý do gì, khi thoát vòng lặp là mất kết nối
+                // KHI THOÁT VÒNG LẶP (vì server sập hoặc lỗi)
+                // _isIntentionalDisconnect sẽ là 'false'
                 Cleanup();
             }
         }
@@ -112,13 +137,19 @@ namespace HerculesSimulation.Services
         // Hàm dọn dẹp tài nguyên
         private void Cleanup()
         {
+            if (_isCleaningUp) return;
+            _isCleaningUp = true;
+
+            // SỬA LỖI: Ghi lại trạng thái TRƯỚC KHI dọn dẹp
+            bool wasConnected = this.IsConnected;
+
             try
             {
-                _cancellationTokenSource?.Cancel(); // Hủy Task lắng nghe
+                _cancellationTokenSource?.Cancel();
                 _stream?.Close();
                 _tcpClient?.Close();
             }
-            catch (Exception) { /* Bỏ qua lỗi khi dọn dẹp */ }
+            catch (Exception) { /* Bỏ qua */ }
             finally
             {
                 _stream?.Dispose();
@@ -128,8 +159,18 @@ namespace HerculesSimulation.Services
                 _cancellationTokenSource?.Dispose();
                 _cancellationTokenSource = null;
 
-                // Phát sự kiện "ConnectionClosed"
-                ConnectionClosed?.Invoke();
+                bool wasIntentional = _isIntentionalDisconnect;
+                _isIntentionalDisconnect = false;
+
+                // (Không reset _isCleaningUp ở đây)
+
+                // SỬA LỖI:
+                // CHỈ gửi thông báo "ConnectionClosed"
+                // nếu chúng ta THỰC SỰ ĐÃ KẾT NỐI trước đó.
+                if (wasConnected)
+                {
+                    ConnectionClosed?.Invoke(wasIntentional);
+                }
             }
         }
 
