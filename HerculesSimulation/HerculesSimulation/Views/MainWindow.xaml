@@ -1,0 +1,44 @@
+﻿<Window x:Class="HerculesSimulation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HerculesSimulation"
+        xmlns:views="clr-namespace:HerculesSimulation.Views"
+        xmlns:viewmodels="clr-namespace:HerculesSimulation.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="640"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        WindowState="{Binding TitleBarVM.WindowState, Mode=TwoWay}">
+        <WindowChrome.WindowChrome>
+            <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="40"/>
+        </WindowChrome.WindowChrome>
+
+    <Grid Background="#2D2D30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <views:TitleBarView Grid.Row="0" DataContext="{Binding TitleBarVM}"/>
+
+        <TabControl Grid.Row="1"
+            
+            ItemsSource="{Binding TabControlVM.Tabs}"
+            SelectedItem="{Binding TabControlVM.SelectedTab, Mode=TwoWay}">
+
+            <TabControl.ItemTemplate>
+                <DataTemplate DataType="{x:Type viewmodels:TabViewModel}">
+                    <TextBlock Text="{Binding Header}"/>
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+
+            <TabControl.ContentTemplate>
+                <DataTemplate DataType="{x:Type viewmodels:TabViewModel}">
+                    <ContentControl Content="{Binding ContentViewModel}" />
+                </DataTemplate>
+            </TabControl.ContentTemplate>
+
+        </TabControl>
+    </Grid>
+</Window>

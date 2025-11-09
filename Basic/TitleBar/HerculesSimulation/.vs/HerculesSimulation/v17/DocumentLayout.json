@@ -1,0 +1,162 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|f:\\c#\\hercules\\basic\\titlebar\\herculessimulation\\herculessimulation\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|solutionrelative:herculessimulation\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\herculessimulation\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|solutionrelative:herculessimulation\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\herculessimulation\\viewmodels\\titlebarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|solutionrelative:herculessimulation\\viewmodels\\titlebarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\herculessimulation\\cores\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|solutionrelative:herculessimulation\\cores\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\herculessimulation\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|solutionrelative:herculessimulation\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\herculessimulation\\views\\titlebarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|solutionrelative:herculessimulation\\views\\titlebarview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\herculessimulation\\cores\\viewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|solutionrelative:herculessimulation\\cores\\viewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\herculessimulation\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|solutionrelative:herculessimulation\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\herculessimulation\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F99D0A09-96BB-431A-B0A2-F851F261229B}|HerculesSimulation\\HerculesSimulation.csproj|solutionrelative:herculessimulation\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "App.xaml",
+              "DocumentMoniker": "F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\HerculesSimulation\\App.xaml",
+              "RelativeDocumentMoniker": "HerculesSimulation\\App.xaml",
+              "ToolTip": "F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\HerculesSimulation\\App.xaml",
+              "RelativeToolTip": "HerculesSimulation\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-08T08:02:42.418Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ViewModelBase.cs",
+              "DocumentMoniker": "F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\HerculesSimulation\\Cores\\ViewModelBase.cs",
+              "RelativeDocumentMoniker": "HerculesSimulation\\Cores\\ViewModelBase.cs",
+              "ToolTip": "F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\HerculesSimulation\\Cores\\ViewModelBase.cs",
+              "RelativeToolTip": "HerculesSimulation\\Cores\\ViewModelBase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T07:41:25.548Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RelayCommand.cs",
+              "DocumentMoniker": "F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\HerculesSimulation\\Cores\\RelayCommand.cs",
+              "RelativeDocumentMoniker": "HerculesSimulation\\Cores\\RelayCommand.cs",
+              "ToolTip": "F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\HerculesSimulation\\Cores\\RelayCommand.cs",
+              "RelativeToolTip": "HerculesSimulation\\Cores\\RelayCommand.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T07:32:25.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TitleBarViewModel.cs",
+              "DocumentMoniker": "F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\HerculesSimulation\\ViewModels\\TitleBarViewModel.cs",
+              "RelativeDocumentMoniker": "HerculesSimulation\\ViewModels\\TitleBarViewModel.cs",
+              "ToolTip": "F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\HerculesSimulation\\ViewModels\\TitleBarViewModel.cs",
+              "RelativeToolTip": "HerculesSimulation\\ViewModels\\TitleBarViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T07:29:15.325Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TitleBarView.xaml",
+              "DocumentMoniker": "F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\HerculesSimulation\\Views\\TitleBarView.xaml",
+              "RelativeDocumentMoniker": "HerculesSimulation\\Views\\TitleBarView.xaml",
+              "ToolTip": "F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\HerculesSimulation\\Views\\TitleBarView.xaml",
+              "RelativeToolTip": "HerculesSimulation\\Views\\TitleBarView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-08T07:23:44.108Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\HerculesSimulation\\App.xaml.cs",
+              "RelativeDocumentMoniker": "HerculesSimulation\\App.xaml.cs",
+              "ToolTip": "F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\HerculesSimulation\\App.xaml.cs",
+              "RelativeToolTip": "HerculesSimulation\\App.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T07:22:24.416Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\HerculesSimulation\\ViewModels\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "HerculesSimulation\\ViewModels\\MainViewModel.cs",
+              "ToolTip": "F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\HerculesSimulation\\ViewModels\\MainViewModel.cs",
+              "RelativeToolTip": "HerculesSimulation\\ViewModels\\MainViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T07:21:25.891Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\HerculesSimulation\\Views\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "HerculesSimulation\\Views\\MainWindow.xaml.cs",
+              "ToolTip": "F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\HerculesSimulation\\Views\\MainWindow.xaml.cs",
+              "RelativeToolTip": "HerculesSimulation\\Views\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T07:21:06.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\HerculesSimulation\\Views\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "HerculesSimulation\\Views\\MainWindow.xaml",
+              "ToolTip": "F:\\C#\\Hercules\\Basic\\TitleBar\\HerculesSimulation\\HerculesSimulation\\Views\\MainWindow.xaml",
+              "RelativeToolTip": "HerculesSimulation\\Views\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-08T07:21:02.396Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
