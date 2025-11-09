@@ -117,7 +117,14 @@ namespace HerculesSimulation.Services
                     {
                         break; // Thoát vòng lặp
                     }
-                    // ... (phần DataReceived?.Invoke...)
+                    var receivedData = new byte[bytesRead];
+                    Array.Copy(buffer, 0, receivedData, 0, bytesRead);
+                    // ===============================================
+                    // 2. PHÁT TÍN HIỆU
+                    // Khi nhận được data, nó sẽ "bắn" sự kiện
+                    // DataReceived, gửi kèm data thô (byte[])
+                    // ===============================================
+                    DataReceived?.Invoke(receivedData);
                 }
             }
             catch (OperationCanceledException) { /* Bỏ qua, đây là Disconnect chủ động */ }

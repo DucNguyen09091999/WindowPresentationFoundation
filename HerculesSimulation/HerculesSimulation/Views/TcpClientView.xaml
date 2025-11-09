@@ -45,7 +45,7 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        <TextBox Grid.Column="0" Text="{Binding SendText1}" FontFamily="Consolas"/>
+                        <TextBox Grid.Column="0" Text="{Binding SendText1, UpdateSourceTrigger=PropertyChanged}" FontFamily="Consolas"/>
                         <CheckBox Grid.Column="1" Content="HEX" IsChecked="{Binding IsHex1}" 
                         VerticalAlignment="Center" Margin="5,0"/>
                         <Button Grid.Column="2" Content="Send" Command="{Binding Send1Command}" 
@@ -57,7 +57,7 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        <TextBox Grid.Column="0" Text="{Binding SendText2}" FontFamily="Consolas"/>
+                        <TextBox Grid.Column="0" Text="{Binding SendText2, UpdateSourceTrigger=PropertyChanged}" FontFamily="Consolas"/>
                         <CheckBox Grid.Column="1" Content="HEX" IsChecked="{Binding IsHex2}" 
                         VerticalAlignment="Center" Margin="5,0"/>
                         <Button Grid.Column="2" Content="Send" Command="{Binding Send2Command}" 
@@ -69,7 +69,7 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        <TextBox Grid.Column="0" Text="{Binding SendText3}" FontFamily="Consolas"/>
+                        <TextBox Grid.Column="0" Text="{Binding SendText3, UpdateSourceTrigger=PropertyChanged}" FontFamily="Consolas"/>
                         <CheckBox Grid.Column="1" Content="HEX" IsChecked="{Binding IsHex3}" 
                         VerticalAlignment="Center" Margin="5,0"/>
                         <Button Grid.Column="2" Content="Send" Command="{Binding Send3Command}" 
