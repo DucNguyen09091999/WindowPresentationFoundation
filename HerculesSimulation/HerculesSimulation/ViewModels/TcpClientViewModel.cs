@@ -1,9 +1,11 @@
 ﻿using HerculesSimulation.Cores;
 using HerculesSimulation.Models;
 using HerculesSimulation.Services;
+using System;
 using System.Collections.ObjectModel;
 using System.Net.NetworkInformation;
 using System.Runtime.Remoting.Messaging;
+using System.Text;
 using System.Windows.Input;
 
 namespace HerculesSimulation.ViewModels
@@ -13,6 +15,9 @@ namespace HerculesSimulation.ViewModels
         public ObservableCollection<LogEntry> LogEntries { get; }
         //Services va flag disable/enable
         private readonly IPingService _pingService;
+        private bool _isConnected = false; // <-- CỜ TRẠNG THÁI MỚI
+
+        private readonly ITcpClientService _tcpClientService; // <-- SERVICE MỚI
         private bool _isPinging = false; // flag de disable nut ping
         // === Send ===
         public string SendText1 { get; set; }
@@ -31,6 +36,7 @@ namespace HerculesSimulation.ViewModels
                 {
                     // khi Ip thay doi, thong bao cho PingCommand kiem tra lai
                     ((RelayCommand)PingCommand).RaiseCanExecuteChanged();
+                    ((RelayCommand)ConnectCommand).RaiseCanExecuteChanged();
                 }
             }
         }
@@ -45,6 +51,7 @@ namespace HerculesSimulation.ViewModels
                 {
                     // khi Port thay doi, thong bao cho PingCommand kiem tra lai
                     ((RelayCommand)PingCommand).RaiseCanExecuteChanged();
+                    ((RelayCommand)ConnectCommand).RaiseCanExecuteChanged();
                 }
             }
         }
@@ -77,17 +84,22 @@ namespace HerculesSimulation.ViewModels
         {
             LogEntries = new ObservableCollection<LogEntry>();
             _pingService = new PingService();
+            _tcpClientService = new TcpClientService();
+
+            // Dang ky nhan su kien tu services
+            _tcpClientService.DataReceived += OnDataReceived;
+            _tcpClientService.ConnectionClosed += OnConnectionClosed;
 
             PingCommand = new RelayCommand(ExecutePing, CanExecutePing);
             ConnectCommand = new RelayCommand(ExecuteConnect, CanExecuteConnect);
-            Send1Command = new RelayCommand(p => ExecuteSend(SendText1, IsHex1));
+            Send1Command = new RelayCommand(p => ExecuteSend(SendText1, IsHex1), CanExecuteSend);
             // ... (AuthorizeCommand, ReceiveTestDataCommand)
         }
 
         private bool CanExecutePing(object obj)
         {
             // chi cho phep ping khi khong dang ping va ModuleIp va Port khong rong
-            return !_isPinging && !string.IsNullOrEmpty(ModuleIp) && !string.IsNullOrEmpty(Port);
+            return !_isPinging && !_isConnected && !string.IsNullOrEmpty(ModuleIp) && !string.IsNullOrEmpty(Port);
         }
 
         private async void ExecutePing(object obj)
@@ -98,7 +110,7 @@ namespace HerculesSimulation.ViewModels
             LogEntries.Add(new LogEntry($"Sending ICMP ECHO REQUEST to {ModuleIp}", LogEntry.ColorStatus));
 
             // goi services de ping
-            PingReply reply = await _pingService.PingAsync(ModuleIp, 2000); // 2 giây timeout
+            PingReply reply = await _pingService.PingAsync(ModuleIp, 2000); // 2s timeout
 
             // xu ly ket qua
             if (reply != null && reply.Status == IPStatus.Success)
@@ -115,24 +127,63 @@ namespace HerculesSimulation.ViewModels
             }
 
             _isPinging = false;
-            ((RelayCommand)PingCommand).RaiseCanExecuteChanged(); // Kích hoạt lại nút
+            ((RelayCommand)PingCommand).RaiseCanExecuteChanged(); // kich hoat lai nut ping
         }
 
-        private void ExecuteConnect(object obj)
+        private async void ExecuteConnect(object obj)
         {
-            // TODO: them logic ket noi/ngat ket noi
-            if (ConnectButtonText == "Connect")
+            // Logic 1: Neu dang ket noi, ngat ket noi
+            if (_isConnected)
             {
-                LogEntries.Add(new LogEntry($"Connecting to {ModuleIp}:{Port} ...", LogEntry.ColorStatus));
-                // log sau khi ket noi thanh cong + broadcast
-                // LogEntries.Add(new LogEntry($"Connected to {ModuleIp}:{Port}", LogEntry.ColorStatus));
-                ConnectButtonText = "Disconnect";
+                _tcpClientService.Disconnect();
+                // ham OnConnectionClosed se tu dong duoc goi va xu ly phan con lai
             }
+            // Logic 2: neu chua ket noi, thu ket noi
             else
             {
-                // TODO: Them logic ngat ket noi
-                LogEntries.Add(new LogEntry("Connection closed", LogEntry.ColorError));
-                ConnectButtonText = "Connect";
+                LogEntries.Add(new LogEntry($"Connecting to {ModuleIp}:{Port} ...", LogEntry.ColorStatus));
+
+                // vo hieu hoa nut connect va nut ping trong khi cho
+                _isPinging = true; // dung chung mot co ping de khoa tam
+                ((RelayCommand)ConnectCommand).RaiseCanExecuteChanged();
+                ((RelayCommand)PingCommand).RaiseCanExecuteChanged();
+
+                bool success = false;
+                try
+                {
+                    if (!int.TryParse(Port, out int portNumber))
+                    {
+                        LogEntries.Add(new LogEntry("Invalid Port number.", LogEntry.ColorError));
+                    }
+                    else
+                    {
+                        success = await _tcpClientService.ConnectAsync(ModuleIp, portNumber);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    LogEntries.Add(new LogEntry($"Connection error: {ex.Message}", LogEntry.ColorError));
+                }
+
+                // xu ly ket qua
+                if (success)
+                {
+                    _isConnected = true;
+                    ConnectButtonText = "Disconnect";
+                    LogEntries.Add(new LogEntry($"Connected to {ModuleIp}:{Port}", LogEntry.ColorStatus));
+                }
+                else
+                {
+                    _isConnected = false;
+                    ConnectButtonText = "Connect";
+                    LogEntries.Add(new LogEntry("Connection failed.", LogEntry.ColorError));
+                }
+
+                // kich hoat lai cac nut
+                _isPinging = false;
+                ((RelayCommand)ConnectCommand).RaiseCanExecuteChanged();
+                ((RelayCommand)PingCommand).RaiseCanExecuteChanged();
+                ((RelayCommand)Send1Command).RaiseCanExecuteChanged();
             }
         }
         private bool CanExecuteConnect(object obj)
@@ -140,13 +191,68 @@ namespace HerculesSimulation.ViewModels
             return !string.IsNullOrEmpty(ModuleIp) &&
                    !string.IsNullOrEmpty(Port);
         }
-        private void ExecuteSend(string text, bool isHex)
+
+
+        // === cac ham xu ly su kien tu services ===
+
+        //Duoc goi khi service mat ket noi (do server dong hoac loi)
+        private void OnConnectionClosed()
         {
-            // TODO: Them logic gui du lieu
-            if (!string.IsNullOrEmpty(text))
+            _isConnected = false;
+
+            // Cap nhat UI (phai dung Dispatcher vi dang o thread khac)
+            App.Current.Dispatcher.Invoke(() =>
             {
-                LogEntries.Add(new LogEntry($"{text}", LogEntry.ColorTx)); // Giả lập Echo Server
-                LogEntries.Add(new LogEntry($"{text}", LogEntry.ColorRx)); // Giả lập Echo Server
+                ConnectButtonText = "Connect";
+                LogEntries.Add(new LogEntry("Connection closed.", LogEntry.ColorError));
+
+                // Bao cho cac nut cap nhat lai trang thai
+                ((RelayCommand)ConnectCommand).RaiseCanExecuteChanged();
+                ((RelayCommand)PingCommand).RaiseCanExecuteChanged();
+                ((RelayCommand)Send1Command).RaiseCanExecuteChanged();
+            });
+        }
+
+        // Duoc goi khi services nhan duoc du lieu
+        private void OnDataReceived(byte[] data)
+        {
+            string receivedText = Encoding.ASCII.GetString(data); //Gia su la ASCII
+
+            // cap nhat UI (phai dung Dispatcher)
+            App.Current.Dispatcher.Invoke(() =>
+            {
+                LogEntries.Add(new LogEntry($"[RX] <- {receivedText}", LogEntry.ColorRx));
+            });
+        }
+
+        // === logic cua send ===
+        private bool CanExecuteSend(object obj)
+        {
+            //  chi cho send khi da ket noi
+            return _isConnected &&
+                   !string.IsNullOrEmpty(SendText1); 
+        }
+
+        private async void ExecuteSend(string text, bool isHex)
+        {
+            if (!CanExecuteSend(null)) return;
+
+            // TODO: Thêm logic chuyển đổi HEX
+            byte[] dataToSend = Encoding.ASCII.GetBytes(text);
+
+            try
+            {
+                await _tcpClientService.SendAsync(dataToSend);
+                LogEntries.Add(new LogEntry($"[TX] -> {text}", LogEntry.ColorTx));
+
+                // (Tùy chọn: Xóa text sau khi gửi)
+                // SendText1 = string.Empty; 
+                // OnPropertyChanged(nameof(SendText1));
+            }
+            catch (Exception ex)
+            {
+                LogEntries.Add(new LogEntry($"Send error: {ex.Message}", LogEntry.ColorError));
+                // Service sẽ tự động gọi Disconnect và kích hoạt OnConnectionClosed
             }
         }
     }

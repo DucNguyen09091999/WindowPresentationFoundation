@@ -104,8 +104,8 @@
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="Module IP"/>
                     <TextBlock Grid.Row="0" Grid.Column="1" Text="Port"/>
 
-                    <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding ModuleIp}" Margin="0,0,5,0"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Port}"/>
+                    <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding ModuleIp, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,5,0"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Port, UpdateSourceTrigger=PropertyChanged}"/>
 
                     <Button Grid.Row="2" Grid.Column="0" Content="Ping" 
                             Command="{Binding PingCommand}" Margin="0,5,5,0"/>

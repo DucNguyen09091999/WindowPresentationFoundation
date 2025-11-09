@@ -57,7 +57,9 @@
     </ApplicationDefinition>
     <Compile Include="Models\LogEntry.cs" />
     <Compile Include="Services\IPingService.cs" />
+    <Compile Include="Services\ITcpClientService.cs" />
     <Compile Include="Services\PingService.cs" />
+    <Compile Include="Services\TcpClientService.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\PcNetworkSettingsViewModel.cs" />
     <Compile Include="ViewModels\SerialViewModel.cs" />
