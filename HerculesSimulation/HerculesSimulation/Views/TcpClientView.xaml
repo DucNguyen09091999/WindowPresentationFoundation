@@ -4,12 +4,179 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HerculesSimulation.Views"
+             xmlns:models="clr-namespace:HerculesSimulation.Models"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="640">
-    <Grid>
-        <TextBlock Text="{Binding TcpClientWelcomeMessage}" 
-                   FontSize="24" 
-                   HorizontalAlignment="Center" 
-                   VerticalAlignment="Center" />
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Margin="0,0,10,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Received/Sent data"/>
+            <Border Grid.Row="1" BorderBrush="#888888" BorderThickness="1">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Background="White">
+                    <ItemsControl ItemsSource="{Binding LogEntries}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate DataType="{x:Type models:LogEntry}">
+                                <TextBlock Margin="2,0,2,0" FontFamily="Consolas" TextWrapping="Wrap">
+                                        <Run Text="{Binding Timestamp, Mode=OneWay}" Foreground="Gray"/>
+                                        <Run Text="{Binding Text, Mode=OneWay}" 
+                                             Foreground="{Binding Color, Mode=OneWay}"/>
+                                </TextBlock>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Border>
+
+            <GroupBox Grid.Row="3" Header="Send" Margin="0,5,0,0">
+                <StackPanel>
+                    <Grid Margin="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Grid.Column="0" Text="{Binding SendText1}" FontFamily="Consolas"/>
+                        <CheckBox Grid.Column="1" Content="HEX" IsChecked="{Binding IsHex1}" 
+                        VerticalAlignment="Center" Margin="5,0"/>
+                        <Button Grid.Column="2" Content="Send" Command="{Binding Send1Command}" 
+                      Padding="10,2"/>
+                    </Grid>
+                    <Grid Margin="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Grid.Column="0" Text="{Binding SendText2}" FontFamily="Consolas"/>
+                        <CheckBox Grid.Column="1" Content="HEX" IsChecked="{Binding IsHex2}" 
+                        VerticalAlignment="Center" Margin="5,0"/>
+                        <Button Grid.Column="2" Content="Send" Command="{Binding Send2Command}" 
+                      Padding="10,2"/>
+                    </Grid>
+                    <Grid Margin="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Grid.Column="0" Text="{Binding SendText3}" FontFamily="Consolas"/>
+                        <CheckBox Grid.Column="1" Content="HEX" IsChecked="{Binding IsHex3}" 
+                        VerticalAlignment="Center" Margin="5,0"/>
+                        <Button Grid.Column="2" Content="Send" Command="{Binding Send3Command}" 
+                      Padding="10,2"/>
+                    </Grid>
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+
+        <Grid Grid.Column="1" Width="200">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <GroupBox Grid.Row="0" Header="TCP" FontWeight="Bold">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Module IP"/>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="Port"/>
+
+                    <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding ModuleIp}" Margin="0,0,5,0"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Port}"/>
+
+                    <Button Grid.Row="2" Grid.Column="0" Content="Ping" 
+                            Command="{Binding PingCommand}" Margin="0,5,5,0"/>
+                    <Button Grid.Row="2" Grid.Column="1" 
+                            Command="{Binding ConnectCommand}" Margin="0,5,0,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="../Resources/Assets/Icons/Hercules-SETUP.gif" Style="{StaticResource IconStyle}"/>
+                            <TextBlock Text="{Binding ConnectButtonText}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Grid.Row="1" Header="TEA authorization" Margin="0,5,0,0">
+                <StackPanel>
+                    <GroupBox Header="TEA key">
+                        <Grid Margin="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="1:" Style="{StaticResource LabelStyle}"/>
+                            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding TeaKey1}" FontFamily="Consolas"/>
+                            <TextBlock Grid.Row="0" Grid.Column="2" Text="3:" Style="{StaticResource LabelStyle}"/>
+                            <TextBox Grid.Row="0" Grid.Column="3" Text="{Binding TeaKey3}" FontFamily="Consolas"/>
+
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="2:" Style="{StaticResource LabelStyle}"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding TeaKey2}" FontFamily="Consolas"/>
+                            <TextBlock Grid.Row="1" Grid.Column="2" Text="4:" Style="{StaticResource LabelStyle}"/>
+                            <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding TeaKey4}" FontFamily="Consolas"/>
+                        </Grid>
+                    </GroupBox>
+
+                    <TextBlock Text="Authorization code" Margin="0,5,0,2"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Grid.Column="0" Text="{Binding AuthCode}" Margin="0,0,5,0" FontFamily="Consolas"/>
+                        <Button Grid.Column="1" Command="{Binding AuthorizeCommand}" 
+                                Style="{StaticResource LockButtonStyle}">
+                            <Image Source="../Resources/Assets/Icons/Hercules-SETUP.gif" Height="16" Width="16"/>
+                        </Button>
+                    </Grid>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Grid.Row="2" Header="PortStore test" Margin="0,5,0,0">
+                <StackPanel Margin="5">
+                    <CheckBox Content="NVT disable" IsChecked="{Binding IsNvtDisabled}"/>
+                    <Button Content="Received test data" 
+                            Command="{Binding ReceiveTestDataCommand}" Margin="0,5,0,0"/>
+                </StackPanel>
+            </GroupBox>
+
+            <CheckBox Grid.Row="3" Content="Redirect to UDP" Margin="5"
+                      IsChecked="{Binding IsRedirectToUdpEnabled}"/>
+
+            <StackPanel Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <Image Source="../Resources/Assets/Icons/Hercules-SETUP.gif" Height="50" Margin="0,15,0,0"/>
+                <TextBlock Text="Hercules SETUP utility" HorizontalAlignment="Center"/>
+                <TextBlock Text="{Binding Version}" HorizontalAlignment="Center" FontWeight="Bold"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </UserControl>

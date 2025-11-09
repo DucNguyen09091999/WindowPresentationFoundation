@@ -12,7 +12,7 @@ namespace HerculesSimulation.Models
         public string Timestamp { get; }
         public string Text { get; }
 
-        // Chúng ta sẽ lưu màu sắc dưới dạng Brush
+        // Luu mau sac duoi da
         public Brush Color { get; }
 
         public LogEntry(string text, Brush color)
@@ -22,10 +22,10 @@ namespace HerculesSimulation.Models
             Color = color;
         }
 
-        // Tạo sẵn một số màu tĩnh để ViewModel dễ gọi
+        // tao san mot so ham tinh de viewmodel goi
         public static Brush ColorStatus => Brushes.DarkGreen;
         public static Brush ColorError => Brushes.Red;
-        public static Brush ColorTx => Brushes.Blue; // Dữ liệu gửi đi (TX)
-        public static Brush ColorRx => Brushes.Black; // Dữ liệu nhận (RX)
+        public static Brush ColorTx => Brushes.Blue; // du lieu gui di (TX)
+        public static Brush ColorRx => Brushes.Black; // du lieu nhan ve (RX)
     }
 }

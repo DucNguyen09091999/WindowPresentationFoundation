@@ -56,6 +56,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\LogEntry.cs" />
+    <Compile Include="Services\IPingService.cs" />
+    <Compile Include="Services\PingService.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\PcNetworkSettingsViewModel.cs" />
     <Compile Include="ViewModels\SerialViewModel.cs" />
@@ -133,9 +135,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\Assets\Icons\Hercules-SETUP.gif" />
   </ItemGroup>

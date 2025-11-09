@@ -25,7 +25,7 @@ namespace HerculesSimulation.ViewModels
             Tabs.Add(new TabViewModel("UPD Setup", typeof(UdpSetupViewModel)));
             Tabs.Add(new TabViewModel("Serial", typeof(SerialViewModel)));
             Tabs.Add(new TabViewModel("TCP Client", typeof(TcpClientViewModel)));
-            // Chọn tab đầu tiên
+            // chon tab dau tien
             SelectedTab = Tabs[0];
         }
 

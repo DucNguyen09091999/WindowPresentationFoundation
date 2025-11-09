@@ -98,5 +98,13 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style x:Key="LockButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#F0F0F0"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="3"/>
+        </Style>
+
     </Application.Resources>
 </Application>
